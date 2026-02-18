@@ -70,6 +70,11 @@ end
 
 -- Main
 local function main()
+  if not API_KEY then
+    mp.osd_message("Jimaku: API key not provided (set JIMAKU_API_KEY)", OSD_TIMEOUT)
+    return
+  end
+
   -- parse filename to get title and episode
   mp.osd_message("Jimaku: parsing file name", OSD_TIMEOUT)
   local filename = mp.get_property('filename')
