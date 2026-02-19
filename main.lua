@@ -1,6 +1,7 @@
 local utils = require 'mp.utils'
 
 -- Config
+-- https://jimaku.cc/account
 local API_KEY = os.getenv("JIMAKU_API_KEY")
 local OSD_TIMEOUT = 3
 
