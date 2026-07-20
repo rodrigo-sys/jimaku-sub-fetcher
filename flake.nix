@@ -21,23 +21,23 @@
 
           propagatedUserEnvPkgs = [
             pkgs.curl
-            pkgs.python3Packages.ffsubsync
+            pkgs.ffsubsync
             pkgs.python3Packages.guessit
           ];
 
           installPhase = ''
             runHook preInstall
 
-            mkdir -p $out/share/mpv/scripts
-            cp -r * $out/share/mpv/scripts/
-            rm -f $out/share/mpv/scripts/flake.nix
+            mkdir -p $out/share/jimaku-sub-fetcher
+            cp -r * $out/share/jimaku-sub-fetcher
+            rm -f $out/share/jimaku-sub-fetcher/flake.nix
 
             mkdir -p $out/bin
             cat <<- 'EOF' > $out/bin/jimaku-setup
             	#!/usr/bin/env bash
             	echo "Linking jimaku-sub-fetcher to your mpv config..."
             	mkdir -p $HOME/.config/mpv/scripts
-            	ln -sf $HOME/.nix-profile/share/mpv/scripts/* $HOME/.config/mpv/scripts/
+            	ln -sf $HOME/.nix-profile/share/jimaku-sub-fetcher $HOME/.config/mpv/scripts/
             	echo "Done! jimaku-sub-fetcher is now active in mpv."
             	EOF
             
