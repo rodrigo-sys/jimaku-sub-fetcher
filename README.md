@@ -23,7 +23,7 @@ mpv script to fetch and sync subtitles from [jimaku.cc](https://jimaku.cc).
 
 1. **Clone** this script to your mpv scripts directory:
    ```bash
-   git clone -C ~/.config/mpv/scripts/ 'https://github.com/rodrigo-sys/jimaku-sub-fetcher'
+   git -C ~/.config/mpv/scripts/ clone 'https://github.com/rodrigo-sys/jimaku-sub-fetcher'
    ```
 
 2. **Set API key** as environment variable:
